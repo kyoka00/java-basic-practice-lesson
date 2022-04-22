@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-<%
-    // Aさんのスコアを国語、数学、英語の順に配列へ入れる
+<%	
+    //Aさんのスコアを国語、数学、英語の順に配列へ入れる
     // ※この処理は変更しないでください。
     int[] aScore = { 100, 54, 69 };
 
@@ -56,22 +56,66 @@ table th, table td {
     </tr>
     <tr>
       <td>Aさん</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
+      <td>
+      <%
+      	out.println(aScore[0]);
+      %>
+      </td>
+      <td>
+      <%
+      	out.println(aScore[1]);
+      %>
+	 </td>
+      <td>
+	  <%
+      	out.println(aScore[2]);
+      %>
+	  </td>
     </tr>
     <tr>
       <td>Bさん</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
+      <td>
+      <%
+      	out.println(bScore[0]);
+      %>
+	  </td>
+      <td>
+      <%
+      	out.println(bScore[1]);
+      %>
+	  </td>
+      <td>
+      <%
+      	out.println(bScore[2]);
+      %>
+      </td>
     </tr>
   </table>
 
   <h2>平均点</h2>
-  <p>国語：xxx</p>
-  <p>数学：xxx</p>
-  <p>英語：xxx</p>
-  <p>合計：xxx</p>
+  <p>国語：
+  	<%
+  		double japaneseAve = (aScore[0]+bScore[0])/2.0;
+      	out.println(japaneseAve);
+     %>
+  </p>
+  <p>数学：
+  	<%
+  		double mathAve = (aScore[1]+bScore[1])/2.0;
+      	out.println(mathAve);
+     %>
+  </p>
+  <p>英語：
+  	<%
+  		double englishAve = (aScore[2]+bScore[2])/2.0;
+      	out.println(englishAve);
+     %>
+ </p>
+  <p>合計：
+  	<%
+  		double aveSum = japaneseAve + mathAve + englishAve;
+      	out.println(aveSum);
+     %>
+ </p>
 </body>
 </html>
