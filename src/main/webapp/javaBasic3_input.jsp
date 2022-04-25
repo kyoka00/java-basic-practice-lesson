@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Java基礎_演習問題3</title>
+
 </head>
 <body>
-
   <!-- ※このファイルは全ての処理を実装済です。変更しないでください。  -->
 
   <h1>Java基礎 - 演習問題3</h1>

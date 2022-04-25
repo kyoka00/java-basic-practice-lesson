@@ -2,13 +2,9 @@
   pageEncoding="UTF-8"%>
 
 <%
-    // ※必要な処理を実装してください
-
-    // 入力値取得
-
-    // 表示するメッセージ用の変数
-
-    // メッセージ作成
+	String num1 =request.getParameter("num1");
+	String num2 =request.getParameter("num2");
+	String operator =request.getParameter("operator");
 
 %>
 
@@ -29,7 +25,51 @@
   <h2>四則演算</h2>
 
   <p>
-    <!-- メッセージの表示  -->
+    <%
+    
+   if (num1== null && num2 == null){
+	   out.println("数値を入力してください");
+   }
+    else if (num1.isEmpty()&& num2.isEmpty() ){
+    	out.println("数値が両方とも未入力です");
+    	
+    }else if(num1.isEmpty() || num2.isEmpty() ){
+    	out.println("数値を入力してください");
+    	
+    }else{
+    	
+    	int nums1 = Integer.parseInt(num1);
+		int nums2 = Integer.parseInt(num2);
+		
+		int answer= 0;
+	    double answerD =0;
+	    
+   		 switch(operator){
+		    case "add":
+		    	answer = nums1 + nums2;
+		    	out.println (nums1 +"＋"+ nums2 +"=" + answer);
+		    	break;
+		    
+		    case "sub":
+		    	answer = nums1 - nums2;
+		    	out.println (nums1 +"-"+ nums2 +"=" + answer);
+		    	break;
+		    	
+		    case "mul":
+		    	answer = nums1 * nums2;
+		    	out.println (nums1 +"×"+ nums2 +"=" + answer);
+		    	break;
+		    	
+		    case "div":
+		    	answerD = (double)nums1 / nums2; //小数点以下も表示される
+		    	out.println (nums1 +"÷"+ nums2 +"=" + answerD);
+		    	break;
+		    default:
+		    	out.println("エラーです");
+		    }
+    }
+    
+    %>
 
   </p>
 
