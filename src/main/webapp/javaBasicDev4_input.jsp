@@ -4,18 +4,30 @@
     /*
        下記コメントを参考に、必要な処理を記述してください
     */
+    String btn = request.getParameter("btn");
 
     // セッション初期化
+    if (session.getAttribute("money") == null) {
+    	session.setAttribute("money", 150000);
+	}
+    
+    int money = (int)session.getAttribute("money");
+	
     // (セッションに所持金がない、もしくは、リセットボタンを押した際は
     //  所持金の初期値をセッションに保存する)
-
-    // 所持金をセッションから取得
-    int money = 150000; //現在は仮で値をセットしている。実際はセッションから取得する
+	if (btn!= null && btn.equals("reset")) {
+		session.setAttribute("money", 150000);
+    }else if (money == 0){
+    	session.setAttribute("money", 150000);
+    }
+	
+   
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Java基礎_演習問題4(発展)</title>
 <style>
 table {
@@ -81,6 +93,8 @@ table th, table td {
 
   <form action="javaBasicDev4_input.jsp" method="post">
     <button type="submit" name="btn" value="reset">リセット</button>
+  
+  
   </form>
 </body>
 </html>
