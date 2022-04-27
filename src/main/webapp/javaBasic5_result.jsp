@@ -2,8 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%
-    /* ※todoの部分に処理を追加してください */
-
     // 入力値を取得
     request.setCharacterEncoding("UTF-8");
     String widthStr = request.getParameter("width");
@@ -11,11 +9,15 @@
     String btn = request.getParameter("btn");
 
     double result = 0;
+    
+    if (btn.equals("triangle")){
+    	result = Utility.getTriangleArea(widthStr, heightStr);
+    	
+    }else if(btn.equals("rectangle")){
+    	result = Utility.getRectangleArea(widthStr, heightStr);
+    }
 
-    // todo:要実装
-    // Utilityクラス内のメソッドを呼んで結果を取得
-    // 三角形、長方形のどちらのボタンを押したかを判断し、
-    // 押したボタンに対応するメソッドを呼ぶ
+    
 
 %>
 
